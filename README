@@ -1,5 +1,5 @@
 BB repository for Fedora Copr Build
 
-BB project URL: http://aa-project.sourceforge.net/bb/
-Fedora Copr Build Page: http://aa-project.sourceforge.net/bb/
+BB project URL: https://aa-project.sourceforge.net/bb/
+Fedora Copr Build Page: https://copr.fedorainfracloud.org/coprs/jackgreiner/bb-fedora/
 Source for SPEC file: https://build.opensuse.org/package/show/home:zhonghuaren/bb
