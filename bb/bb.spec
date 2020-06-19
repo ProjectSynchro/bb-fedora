@@ -21,7 +21,7 @@ BB is a portable demo based on AAlib.
 
 %prep
 %setup -q
-patch -p0 -b .timers < %{name}-1.3.0-timer.patch
+patch -p0 -b < %{name}-1.3.0-timer.patch
 
 %build
 %configure 
