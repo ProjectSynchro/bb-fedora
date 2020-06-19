@@ -13,6 +13,7 @@ BuildRequires:  make
 BuildRequires:  automake 
 BuildRequires:  gcc 
 BuildRequires:  gcc-c++
+
 License: GPLv2+
 
 %description
@@ -20,7 +21,7 @@ BB is a portable demo based on AAlib.
 
 %prep
 %setup -q
-patch --no-backup-if-mismatch -Np4 < %{name}-1.3.0-timer.patch
+patch -p0 -b .timers < %{name}-1.3.0-timer.patch
 
 %build
 %configure 
