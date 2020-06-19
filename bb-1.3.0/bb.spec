@@ -1,13 +1,18 @@
 Name: bb
 Summary: AAlib demo
-Version: 1.3.0
-Release: 12
-Source: %{name}-%{version}.tar.bz2 
-Patch1: %{name}-1.3.0-timer.patch
+Version: 1.3.1
+Release: 1%{?dist}
+
+Source0: %{name}-%{version}.tar.bz2 
 Group: Games/Other
 URL: http://aa-project.sourceforge.net/aalib/
-BuildRequires:	aalib-devel
-BuildRequires:	libmikmod-devel
+
+BuildRequires:  aalib-devel
+BuildRequires:  libmikmod-devel
+BuildRequires:  make
+BuildRequires:  automake 
+BuildRequires:  gcc 
+BuildRequires:  gcc-c++
 License: GPLv2+
 
 %description
@@ -15,7 +20,7 @@ BB is a portable demo based on AAlib.
 
 %prep
 %setup -q
-%patch1 -p0 -b .timers
+patch --no-backup-if-mismatch -Np4 < %{name}-1.3.0-timer.patch
 
 %build
 %configure 
@@ -34,6 +39,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man1/*
 
 %changelog
+* Thu Jun 18 2020 Jack Greiner <jack@emoss.org> 1.3.1
+- Rebuild for Copr
 * Mon Apr 18 2016 Huaren Zhong <huaren.zhong@gmail.com> 1.3.0
 - Rebuild for Fedora
 * Fri Oct 18 2013 umeabot <umeabot> 1.3.0-12.mga4
